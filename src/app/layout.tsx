@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Sora } from 'next/font/google';
 import './globals.css';
+import Script from 'next/script';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -57,8 +58,22 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} ${sora.variable} font-sans bg-background text-white antialiased overflow-x-hidden`}>
-        {children}
-      </body>
+  {children}
+
+  <Script
+    src="https://www.googletagmanager.com/gtag/js?id=G-GN7L0T7GNZ"
+    strategy="afterInteractive"
+  />
+
+  <Script id="google-analytics" strategy="afterInteractive">
+    {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GN7L0T7GNZ');
+    `}
+  </Script>
+</body>
     </html>
   );
 }
