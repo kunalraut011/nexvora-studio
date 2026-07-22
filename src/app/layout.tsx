@@ -1,3 +1,19 @@
+import type { Metadata } from 'next';
+import { Inter, Sora } from 'next/font/google';
+import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const sora = Sora({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sora',
+});
+
 export const metadata: Metadata = {
   title: 'Nexvora Studio | Premium Web Design Agency',
   description:
@@ -32,3 +48,17 @@ export const metadata: Metadata = {
     follow: true,
   },
 };
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className="dark">
+      <body className={`${inter.variable} ${sora.variable} font-sans bg-background text-white antialiased overflow-x-hidden`}>
+        {children}
+      </body>
+    </html>
+  );
+}
