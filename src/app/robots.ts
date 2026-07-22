@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://nexvorastudio.com/sitemap.xml',
+    sitemap: 'https://nexvora-studio-18kb.vercel.app/sitemap.xml',
   };
 }
