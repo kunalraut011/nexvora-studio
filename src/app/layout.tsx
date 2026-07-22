@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  verification: {
+  google: "n039GAtjXvEbKgH",
+},
   twitter: {
     card: 'summary_large_image',
     title: 'Nexvora Studio | Premium Web Design Agency',
